@@ -71,3 +71,8 @@ For complete mathematical formulas, definitions, and interpretation rules for ac
 
 ## Changelog
 Project release history and version tracking are maintained in [`CHANGELOG.md`](CHANGELOG.md).
+
+---
+
+## Contributing
+We welcome contributions! Please review [`CONTRIBUTING.md`](CONTRIBUTING.md) and [`SECURITY.md`](SECURITY.md) before submitting pull requests.
