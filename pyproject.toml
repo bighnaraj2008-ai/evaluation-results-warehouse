@@ -1,0 +1,18 @@
+﻿[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "evaluation-results-warehouse"
+version = "1.0.0"
+description = "Pure SQL relational warehouse for LLM evaluation runs and comparative CTE workloads"
+readme = "README.md"
+requires-python = ">=3.9"
+authors = [
+    { name = "bighnaraj2008-ai" }
+]
+license = { text = "MIT" }
+
+[tool.sqlfluff.core]
+dialect = "ansi"
+max_line_length = 100
