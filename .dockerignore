@@ -1,0 +1,16 @@
+﻿.git
+.gitignore
+*.db
+*.sqlite
+*.sqlite3
+*.log
+.env
+.env.*
+.idea/
+.vscode/
+.antigravity/
+.cursor/
+.claude/
+.DS_Store
+Thumbs.db
+target/
