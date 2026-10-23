@@ -1,0 +1,43 @@
+﻿# =============================================================================
+# Optional PostgreSQL runtime for evaluation-results-warehouse.
+#
+# SQLite is the canonical, verified engine. This compose file is a convenience
+# for teams that want to exercise the same DDL and queries on PostgreSQL.
+# The credentials below are local demo values only. Do not reuse them outside
+# a developer workstation; do not commit a real .env file.
+#
+# Usage:
+#   cd docker
+#   docker compose up -d
+#   docker compose exec postgres psql -U eval -d eval_warehouse
+#
+# The init scripts run only when the named volume is empty. To re-seed:
+#   docker compose down -v && docker compose up -d
+# =============================================================================
+name: evaluation-results-warehouse
+
+services:
+  postgres:
+    image: postgres:16-alpine
+    container_name: evaluation-results-warehouse-db
+    restart: unless-stopped
+    environment:
+      POSTGRES_DB: eval_warehouse
+      POSTGRES_USER: eval
+      POSTGRES_PASSWORD: eval_local_only
+    ports:
+      - "5432:5432"
+    volumes:
+      - eval_pgdata:/var/lib/postgresql/data
+      - ../sql/schema/001_eval_warehouse.sql:/docker-entrypoint-initdb.d/10_schema.sql:ro
+      - ../sql/seeds/001_models_seed.sql:/docker-entrypoint-initdb.d/20_seeds.sql:ro
+      - ../sql/queries:/opt/eval/queries:ro
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U eval -d eval_warehouse"]
+      interval: 5s
+      timeout: 5s
+      retries: 10
+      start_period: 5s
+
+volumes:
+  eval_pgdata:
