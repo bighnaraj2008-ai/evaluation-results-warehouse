@@ -66,3 +66,8 @@ See [`docs/SCHEMA_DIAGRAM.mmd`](docs/SCHEMA_DIAGRAM.mmd) for the complete Mermai
 
 ## Metrics Reference
 For complete mathematical formulas, definitions, and interpretation rules for accuracy, faithfulness, latency, and win rate, consult [`docs/METRICS_DICTIONARY.md`](docs/METRICS_DICTIONARY.md).
+
+---
+
+## Changelog
+Project release history and version tracking are maintained in [`CHANGELOG.md`](CHANGELOG.md).
