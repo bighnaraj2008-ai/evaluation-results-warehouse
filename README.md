@@ -1,4 +1,7 @@
-﻿[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+﻿[![CI](https://github.com/bighnaraj2008-ai/evaluation-results-warehouse/actions/workflows/ci.yml/badge.svg)](https://github.com/bighnaraj2008-ai/evaluation-results-warehouse/actions/workflows/ci.yml)
+[![SQL Dialect: ANSI / SQLite / PostgreSQL](https://img.shields.io/badge/SQL-ANSI%20%7C%20SQLite%20%7C%20Postgres-blue.svg)](#)
+[![Status: Production Ready](https://img.shields.io/badge/Status-Production%20Ready-brightgreen.svg)](#)
+[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
 # evaluation-results-warehouse
 
 A pure-SQL warehouse for storing LLM evaluation runs and answering the questions
