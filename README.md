@@ -55,3 +55,9 @@ Reference implementations and analytical templates are available in the [`exampl
 ## Dimensional Architecture
 Detailed dimensional models and data flow architectures are documented in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
 See [`docs/SCHEMA_DIAGRAM.mmd`](docs/SCHEMA_DIAGRAM.mmd) for the complete Mermaid entity relationship diagram.
+
+---
+
+## Troubleshooting & FAQ
+- [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md): Solutions to common evaluation edge cases and query pitfalls.
+- [`docs/FAQ.md`](docs/FAQ.md): Frequently asked questions on SQL warehousing and metric definitions.
