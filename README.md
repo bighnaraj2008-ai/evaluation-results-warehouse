@@ -16,3 +16,14 @@ is no application code and no ORM.
 - Schema applies cleanly, seeds are idempotent, and all three analytical
   workloads return validated metrics.
 - The repository is initialized with Git and adheres to strict security hygiene.
+---
+
+## Setup: PostgreSQL (Docker)
+
+`ash
+cd docker
+docker compose up -d
+docker compose exec postgres psql -U eval -d eval_warehouse
+`
+
+The compose file mounts the schema and seed files as PostgreSQL init scripts.
