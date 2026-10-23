@@ -61,3 +61,8 @@ See [`docs/SCHEMA_DIAGRAM.mmd`](docs/SCHEMA_DIAGRAM.mmd) for the complete Mermai
 ## Troubleshooting & FAQ
 - [`docs/TROUBLESHOOTING.md`](docs/TROUBLESHOOTING.md): Solutions to common evaluation edge cases and query pitfalls.
 - [`docs/FAQ.md`](docs/FAQ.md): Frequently asked questions on SQL warehousing and metric definitions.
+
+---
+
+## Metrics Reference
+For complete mathematical formulas, definitions, and interpretation rules for accuracy, faithfulness, latency, and win rate, consult [`docs/METRICS_DICTIONARY.md`](docs/METRICS_DICTIONARY.md).
