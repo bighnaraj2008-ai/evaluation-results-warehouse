@@ -1,4 +1,5 @@
-﻿# evaluation-results-warehouse
+﻿[![License: MIT](https://img.shields.io/badge/License-MIT-yellow.svg)](LICENSE)
+# evaluation-results-warehouse
 
 A pure-SQL warehouse for storing LLM evaluation runs and answering the questions
 that actually decide a release: **Which model version is better on the same test
