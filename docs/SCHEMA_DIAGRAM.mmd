@@ -1,0 +1,51 @@
+﻿erDiagram
+    MODELS ||--o{ EVAL_RUNS : executes
+    PROMPT_TEMPLATES ||--o{ EVAL_RUNS : configures
+    EVAL_RUNS ||--|{ EVAL_RESULTS : produces
+    TEST_CASES ||--|{ EVAL_RESULTS : evaluates
+
+    MODELS {
+        int model_id PK
+        string model_name
+        string version
+        string provider
+        string created_at
+    }
+
+    PROMPT_TEMPLATES {
+        int template_id PK
+        string name
+        string version
+        string template_text
+        string created_at
+    }
+
+    TEST_CASES {
+        string test_case_id PK
+        string dataset_name
+        string category
+        string question
+        string expected_answer
+        string created_at
+    }
+
+    EVAL_RUNS {
+        int run_id PK
+        int model_id FK
+        string dataset_name
+        string prompt_version
+        int prompt_template_id FK
+        string executed_at
+        string status
+    }
+
+    EVAL_RESULTS {
+        int result_id PK
+        int run_id FK
+        string test_case_id FK
+        real score_accuracy
+        real score_faithfulness
+        int score_latency_ms
+        boolean passed
+        string error_details
+    }
