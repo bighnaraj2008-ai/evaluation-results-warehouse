@@ -41,3 +41,11 @@ The compose file mounts the schema and seed files as PostgreSQL init scripts.
 3. **`sql/queries/eval_summary_leaderboard.sql`**:
    Multi-benchmark leaderboard with composite score weighting:
    `0.45 * accuracy + 0.35 * faithfulness + 0.10 * pass_rate + 0.10 * latency_score`.
+
+---
+
+## Example Scripts
+Reference implementations and analytical templates are available in the [`examples/`](examples/) directory:
+- [`sample_comparison.sql`](examples/sample_comparison.sql): Parameterized baseline vs candidate analysis.
+- [`leaderboard_report.sql`](examples/leaderboard_report.sql): Executive leaderboard reporting.
+- [`advanced_ctes.sql`](examples/advanced_ctes.sql): Complex analytical CTE recipes.
