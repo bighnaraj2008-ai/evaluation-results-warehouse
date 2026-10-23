@@ -27,3 +27,17 @@ docker compose exec postgres psql -U eval -d eval_warehouse
 `
 
 The compose file mounts the schema and seed files as PostgreSQL init scripts.
+
+---
+
+## Analytical CTE Queries
+
+1. **`sql/queries/compare_model_versions.sql`**:
+   Head-to-head comparison on shared test cases calculating win rates, non-tie win rates, accuracy deltas, and latency deltas.
+
+2. **`sql/queries/regression_detector.sql`**:
+   Consecutive version regression scanner with automated severity labeling (`critical`, `high`, `medium`, `none`).
+
+3. **`sql/queries/eval_summary_leaderboard.sql`**:
+   Multi-benchmark leaderboard with composite score weighting:
+   `0.45 * accuracy + 0.35 * faithfulness + 0.10 * pass_rate + 0.10 * latency_score`.
