@@ -63,4 +63,26 @@ CREATE TABLE eval_results (
         CHECK (score_latency_ms >= 0)
 );
 
+-- -----------------------------------------------------------------------------
+-- Required access paths: model lineage lookups, run drill-down, and case-level
+-- analysis. Composite indexes support the analytical views and filters.
+-- -----------------------------------------------------------------------------
+CREATE INDEX idx_eval_runs_model_id
+    ON eval_runs (model_id);
+
+CREATE INDEX idx_eval_results_run_id
+    ON eval_results (run_id);
+
+CREATE INDEX idx_eval_results_test_case_id
+    ON eval_results (test_case_id);
+
+CREATE INDEX idx_eval_results_run_passed
+    ON eval_results (run_id, passed);
+
+CREATE INDEX idx_eval_runs_dataset_status
+    ON eval_runs (dataset_name, status);
+
+CREATE INDEX idx_models_lineage
+    ON models (model_name, created_at);
+
 COMMIT;
