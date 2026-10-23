@@ -49,3 +49,9 @@ Reference implementations and analytical templates are available in the [`exampl
 - [`sample_comparison.sql`](examples/sample_comparison.sql): Parameterized baseline vs candidate analysis.
 - [`leaderboard_report.sql`](examples/leaderboard_report.sql): Executive leaderboard reporting.
 - [`advanced_ctes.sql`](examples/advanced_ctes.sql): Complex analytical CTE recipes.
+
+---
+
+## Dimensional Architecture
+Detailed dimensional models and data flow architectures are documented in [`docs/ARCHITECTURE.md`](docs/ARCHITECTURE.md).
+See [`docs/SCHEMA_DIAGRAM.mmd`](docs/SCHEMA_DIAGRAM.mmd) for the complete Mermaid entity relationship diagram.
