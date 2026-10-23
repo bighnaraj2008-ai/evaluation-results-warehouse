@@ -27,3 +27,23 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
+
+      - name: Install PostgreSQL Client
+        run: sudo apt-get update && sudo apt-get install -y postgresql-client sqlite3
+
+      - name: Run Schema Migrations and Test Assertions
+        env:
+          PGPASSWORD: eval_test_password
+        run: |
+          echo "Validating on SQLite..."
+          sqlite3 test.db < sql/schema/001_eval_warehouse.sql
+          sqlite3 test.db < sql/seeds/001_models_seed.sql
+          sqlite3 test.db < sql/seeds/002_test_cases_seed.sql
+          sqlite3 test.db < sql/seeds/003_eval_runs_seed.sql
+          sqlite3 test.db < sql/seeds/004_eval_results_seed_v1.sql
+          sqlite3 test.db < sql/seeds/005_eval_results_seed_v2.sql
+          sqlite3 test.db < sql/tests/assert_positive_scores.sql
+          sqlite3 test.db < sql/tests/assert_valid_run_status.sql
+          sqlite3 test.db < sql/tests/assert_foreign_keys.sql
+          sqlite3 test.db < sql/tests/assert_accuracy_bounds.sql
+          echo "All schema migrations and assertions passed cleanly."
